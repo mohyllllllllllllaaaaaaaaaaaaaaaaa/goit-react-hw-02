@@ -32,14 +32,14 @@ const App = () => {
       onFeedback={updateFeedback}
       onReset={resetFeedback}
       hasFeedback={totalFeedback > 0}/>
-      {totalFeedback > 0 ? (
+      {totalFeedback > 0 && (
         <Feedback
         feedback={feedback}
         total={totalFeedback}
         positive={positiveFeedback}/>
-      ) : (
-        <Notification message= "No feedback yet."/>
       )}
+      {totalFeedback === 0 &&
+        <Notification message= "No feedback yet."/>}
     </div>
   );
 };
