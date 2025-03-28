@@ -3,6 +3,7 @@ import  './App.css';
 import Feedback from './components/Feedback';
 import Options from './components/Options';
 import Notification from './components/Notifications';
+import Description from './components/Description';
 const App = () => {
   const initialFeedback = JSON.parse(localStorage.getItem('feedback')) || {
     good: 0,
@@ -26,8 +27,7 @@ const App = () => {
   const positiveFeedback = totalFeedback ? Math.round((feedback.good / totalFeedback) * 100) : 0;
   return (
     <div>
-      <h2>Sip Happens Café</h2>
-      <p>Please leave your feedback about our service by selecting one of the options below.</p>
+      <Description/>
       <Options
       onFeedback={updateFeedback}
       onReset={resetFeedback}
